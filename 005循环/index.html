@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //  for循环遍历数组
+  var persons = ['baobao', 'dashu', 'xioahua'];
+  var bao = "";
+  for (var i = 0; i < persons.length; i++) {
+    bao = bao + persons[i];
+    if (i != 2) {
+      bao = bao + ",";
+    }
+  }
+  console.log(bao);
+
+  persons.join(",");
+
+
+  //变量和字面量
+  //  变量就是var声明出来的  字面量就是不可以改变的  变量可以重新赋值
+  //  function的参数也是变量
+  var a = 1;
+  var b = function (c, d) {
+
+  }
+  var c = "111";
+  b(c, 23);
+  var e = c;
+
+//break的使用 终止循环
+  var ba=[1,2,3,'222',1.2];
+  var aa=-1;
+  for(var i=0;i<ba.length;i++){
+    if(ba[i]=="222"){
+      aa=i;
+      break;
+    }
+  }
+  console.log(aa);
+</script>
+
+</body>
+</html>
