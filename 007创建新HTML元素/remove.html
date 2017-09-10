@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <p id="p1">这是一个段落。</p>
+    <p id="p2">这是另一个段落。</p>
+</div>
+<script>
+//    找到 id位div1的元素
+    var parent=document.getElementById("div1");
+//    找到 id位p1的元素
+var child=document.getElementById("p1");
+//从父元素中删除子元素p1
+    parent.removeChild(child);
+</script>
+</body>
+</html>

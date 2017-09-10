@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p id="a">aaa</p>
+<h1 onclick="this.innerHTML='。。。'">。。。。。。。。</h1>
+<h1 onclick="this.innerHTML='谢谢！'">点击</h1>
+<h1 onclick="a(this)">1111</h1>
+<input type="text" id="aaa" onchange="myFunction()">
+<div onmouseover="over(this)" onmouseout="out(this)" style="background-color:green;width:120px;height:20px;padding:40px;color:#ffffff;"></div>
+<script>
+document.write(Date());
+document.getElementById("a").style.color="red";
+function a(id) {
+    id.innerHTML="222222"
+}
+//onchange 事件------------输入显示为大写
+function myFunction(){
+    var x=document.getElementById("aaa");
+    x.value=x.value.toUpperCase();
+}
+function over(obj) {
+    obj.innerHTML="谢谢"
+}
+function out (obj) {
+    obj.innerHTML="鼠标移上去！"
+}
+
+</script>
+
+</body>
+</html>

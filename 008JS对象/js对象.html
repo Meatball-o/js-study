@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <p>点击下面的按钮，循环遍历对象 "person" 的属性。</p>
+    <button onclick="myFunction()">点击这里</button>
+    <p id="demo"></p>
+</head>
+<body>
+<script>
+    var message = "Meatball";
+    var a = message.length;
+    var b = message.toUpperCase();
+    console.log(a);
+    console.log(b);
+    //创建一个对象为person
+    person = new Object();
+    //    为对象添加属性
+    person.firstname = "Meatball";
+    person.lasename = "uncle";
+    person.age = 25;
+    person.eyecolor = "blue";
+    document.write(person.firstname + " is" + person.age + "yeaars old.");
+    //创建一个对象为personA并且添加属性
+    personA = {firstname: "Meatball", lastname: "uncle", age: "20", eyecolor: "blue"};
+    document.write(personA.lastname + " is" + person.age + "years old.");
+    //    使用函数来构造对象
+    //    创建函数personB
+    function personB(firstname, lastname, age, eyecolor) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+        this.eyecolor = eyecolor;
+    }
+    myBoyFriends = new personB("wang", "hao", 25, "blue");
+    document.write(myBoyFriends.firstname + myBoyFriends.lastname + " is" + myBoyFriends.age + "years old.");
+
+    function personC(firstname, lastname, age, eyecolor) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+        this.eyecolor = eyecolor;
+        this.changeName = changeNme;
+        function changeNme(name) {
+            this.lastname = name;
+        }
+    }
+    myMother = new personC("Steve", "Jone", 56, "green");
+    myMother.changeName = ("Wu");
+    document.write(myMother.lastname);
+
+    function myFunction() {
+        var x;
+        var txt="";
+        var personE={fname:"name",lname:"Gates",age:"56"};
+        for( x in personE){
+            txt=txt+personE[x];
+        }
+        document.getElementById("demo").innerHTML=txt;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    创建一个数组
+    var mycars = new Array();
+    //    赋值
+    mycars[0] = "Saab";
+    mycars[1] = "Volovo";
+    mycars[2] = "BMW";
+    //    循环输出
+    for (i = 0; i < mycars.length; i++) {
+        document.write(mycars[i] + "<br>")
+    }
+
+    var x;
+    var cars = new Array;
+    cars[0] = "Saab";
+    cars[1] = "Volovo";
+    cars[2] = "BMW";
+    for (x in cars) {
+        document.write(mycars[x] + "<br>")
+    }
+    //    concat() 方法来合并两个数组
+    document.write(mycars.concat(cars) + "<br>")
+    //    join() 方法将数组的所有元素组成一个字符串
+    document.write(cars.join() + "<br>");
+    document.write(cars.join(" . ") + "<br>")
+    //  sort() 方法从  字面上  对数组进行排序
+    document.write("由上到下用sort排序 " + cars.sort()+"<br>");
+    //    使用 sort() 方法从  数值上  对数组进行排序
+    function sortNumber(a, b) {
+        return a - b
+    }
+    var arr = new Array(6);
+    arr[0] = "10";
+    arr[1] = "5";
+    arr[2] = "8";
+    arr[3] = "14";
+    arr[4] = "28";
+    arr[5] = "97";
+    document.write(arr.sort(sortNumber))
+
+</script>
+</body>
+</html>

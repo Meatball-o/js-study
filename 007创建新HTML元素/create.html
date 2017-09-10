@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <p class="p1">这是一个段落</p>
+    <p class="p2">这是另一个段落</p>
+</div>
+<script>
+//    创建新的p元素
+    var para=document.createElement("p");
+//    创建一个文本节点
+    var node=document.createTextNode("这是新段落");
+//    像p元素追加这个文本节点
+    para.appendChild(node);
+//    找到id为div1的元素
+    var element=document.getElementById("div1");
+//像div1下已有的元素追加新创建的元素(para)
+    element.appendChild(para);
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div id="txt"></div>
+</head>
+<body  onload="time()">
+<script>
+    //    获得当日的日期
+    document.write(Date() + "<br>");
+    //getTime()返回毫秒数
+    var d = new Date();
+    document.write("从1997/01/01至今已过去" + d.getTime() + "毫秒" + '<br>');
+    //    setFullYear() 设置具体的日期
+    var e = new Date();
+    e.setFullYear(1997, 05, 25);
+    document.write(e + '<br>');
+    //    toUTCString() 将当日的日期（根据 UTC）转换为字符串。
+    var f = new Date();
+    document.write(f.toUTCString() + '<br>');
+    //    getDay() 和数组来显示星期，而不仅仅是数字。
+    var g = new Date();
+    var weekday=new Array(7);
+    weekday[0]="星期日";
+    weekday[1]="星期一";
+    weekday[2]="星期二";
+    weekday[3]="星期三";
+    weekday[4]="星期四";
+    weekday[5]="星期五";
+    weekday[6]="星期六";
+    document.write("今天是"+weekday[g.getDay()])
+//    在页面上显示一个钟表
+//    FIXME有问题
+    function time() {
+        var today=new Date();
+        var h=today.getHours();
+        var m=today.getMinutes();
+        var s=today.getSeconds();
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+        t=setTimeout('startTime()',500);
+    }
+    function checkTime(i) {
+        if(i<10){
+            i="0"+i
+        }
+        return i;
+    }
+
+
+</script>
+</body>
+</html>
