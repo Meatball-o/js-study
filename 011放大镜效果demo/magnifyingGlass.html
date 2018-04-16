@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>magnifyingGlass</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .demo{
+    display: block;
+    width: 230px;
+    height: 150px;
+    /*margin: 50px;*/
+    position: relative;
+    /*border: 1px solid #000;*/
+  }
+  .small_pic {
+    position: relative;
+    z-index: 1;
+
+  }
+  .opaction {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    display: none;
+    background-color: #ccc;
+    opacity: .5;
+  }
+  .big_pic {
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:0;
+    left: 260px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .big_pic img {
+    width: 400px;
+    height: 300px;
+  }
+  .big_img{
+    position: absolute;
+  z-index: 5;
+  }
+</style>
+<body>
+<div class="demo">
+  <div class="small_pic">
+    <div class="opaction"></div>
+    <img style="width: 230px;height: 150px;" src="img/me.jpg" alt="">
+  </div>
+  <div class="big_pic">
+    <img class="big_img" src="img/me.jpg" alt="">
+  </div>
+</div>
+</body>
+</html>
+<script>
+  window.onload=function () {
+    var demo = document.getElementsByClassName("demo")[0];
+    var small = document.getElementsByClassName("small_pic")[0];
+    var opaction = document.getElementsByClassName("opaction")[0];
+    var big = document.getElementsByClassName("big_pic")[0];
+    var big_img = document.getElementsByClassName("big_img")[0];
+    small.onmouseover=function () {
+      big.style.display="block";
+      opaction.style.display="block";
+    }
+    small.onmouseout=function () {
+      big.style.display="none";
+      opaction.style.display="none";
+    }
+    small.onmousemove=function (event) {
+      var left=event.clientX - demo.offsetLeft-small.offsetLeft-opaction.offsetWidth/2;
+      var top=event.clientY - demo.offsetTop-small.offsetTop-opaction.offsetHeight/2;
+
+      if(left<0){
+        left=0;
+      }else if(left>(small.offsetWidth - opaction.offsetWidth)){
+        left=small.offsetWidth - opaction.offsetWidth;
+      }
+      if(top<0){
+        top=0;
+      }else if(top>(small.offsetHeight - opaction.offsetHeight)){
+        top=small.offsetHeight - opaction.offsetHeight;
+      }
+      opaction.style.left=left+"px";
+      opaction.style.top=top+"px";
+
+      var parcentX=left/(small.offsetWidth-opaction.offsetWidth);
+      var parcentY=top/(small.offsetHeight-opaction.offsetHeight);
+
+      big_img.style.left=-parcentX*(big_img.offsetWidth-big.offsetWidth)+"px";
+      big_img.style.top=-parcentY*(big_img.offsetHeight-big.offsetHeight)+"px";
+    }
+  }
+</script>

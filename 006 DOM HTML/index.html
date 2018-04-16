@@ -4,30 +4,38 @@
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
-<body>
+<body>onInput
 <p id="a">aaa</p>
 <h1 onclick="this.innerHTML='。。。'">。。。。。。。。</h1>
 <h1 onclick="this.innerHTML='谢谢！'">点击</h1>
 <h1 onclick="a(this)">1111</h1>
-<input type="text" id="aaa" onchange="myFunction()">
-<div onmouseover="over(this)" onmouseout="out(this)" style="background-color:green;width:120px;height:20px;padding:40px;color:#ffffff;"></div>
+<input type="text" id="aaa" onchange="onChange()" oninput="onInput()">
+<div onmouseover="over(this)" onmouseout="out(this)"
+     style="background-color:green;width:120px;height:20px;padding:40px;color:#ffffff;"></div>
 <script>
-document.write(Date());
-document.getElementById("a").style.color="red";
-function a(id) {
-    id.innerHTML="222222"
-}
-//onchange 事件------------输入显示为大写
-function myFunction(){
-    var x=document.getElementById("aaa");
-    x.value=x.value.toUpperCase();
-}
-function over(obj) {
-    obj.innerHTML="谢谢"
-}
-function out (obj) {
-    obj.innerHTML="鼠标移上去！"
-}
+  document.write(new Date());
+  document.getElementById("a").style.color = "red";
+  function a(dom) {
+    console.log(id) // 当前点击的标签dom
+    dom.innerHTML = "222222"
+  }
+  //onchange 事件------------输入显示为大写
+  function onChange() {
+    var x = document.getElementById("aaa");
+    x.value = x.value.toUpperCase();
+    console.log('onChange:',x.value);
+  }
+  function () {
+    var x = document.getElementById("aaa");
+    x.value = x.value.toUpperCase();
+    console.log('onInput:',x.value);
+  }
+  function over(dom) {
+    dom.innerHTML = "谢谢"
+  }
+  function out(dom) {
+    dom.innerHTML = "鼠标移上去！"
+  }
 
 </script>
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>学生管理</title>
+</head>
+<body>
+<form action="" method="get" onsubmit="submitForm(this)">
+  姓名: <input onchange="limitName(this)" minlength="2" maxlength="10" name="name" type="text" placeholder="姓名"><br>
+  性别:
+  <select name="sex" id="">
+    <option value="1">男</option>
+    <option value="0">女</option>
+  </select>
+  <br>
+  学号: <input name="number" type="text" maxlength="8" minlength="8" placeholder="学号"><br>
+  年龄: <input name="age" type="number" placeholder="年龄" min="0"><br>
+  专业:
+  <select name="zy" id="">
+    <option value="1">园艺</option>
+    <option value="2">电子信息</option>
+    <option value="3" selected >幼教</option>
+    <option value="4">高护</option>
+    <option value="5">建工</option>
+  </select>
+  <br>
+  入学年份:
+  <select name="year" id="">
+    <option value="01">2017</option>
+    <option value="02">2016</option>
+    <option value="03">2015</option>
+    <option value="04">2014</option>
+    <option value="05">2013</option>
+  </select><br>
+  <button type="submit" onclick="">提交</button>
+</form>
+<script>
+  function limitName(dom) {
+    var nameLength = dom.value.length;
+    if(nameLength <2||nameLength>10){
+      alert("姓名长度必须在2-6之间")
+    }
+  }
+  function submitForm(dom) {
+    limitName(dom.name);
+  }
+</script>
+</body>
+</html>
