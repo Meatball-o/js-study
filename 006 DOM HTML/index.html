@@ -6,8 +6,8 @@
 </head>
 <body>onInput
 <p id="a">aaa</p>
-<h1 onclick="this.innerHTML='。。。'">。。。。。。。。</h1>
-<h1 onclick="this.innerHTML='谢谢！'">点击</h1>
+<h1 onclick="this.innerHTML='。。。'">点击内容变为。。。</h1>
+<h1 onclick="this.innerHTML='谢谢！'">点击内容变为点击谢谢！</h1>
 <h1 onclick="a(this)">1111</h1>
 <input type="text" id="aaa" onchange="onChange()" oninput="onInput()">
 <div onmouseover="over(this)" onmouseout="out(this)"
@@ -24,11 +24,6 @@
     var x = document.getElementById("aaa");
     x.value = x.value.toUpperCase();
     console.log('onChange:',x.value);
-  }
-  function () {
-    var x = document.getElementById("aaa");
-    x.value = x.value.toUpperCase();
-    console.log('onInput:',x.value);
   }
   function over(dom) {
     dom.innerHTML = "谢谢"

@@ -21,10 +21,15 @@
     person.lasename = "uncle";
     person.age = 25;
     person.eyecolor = "blue";
-    document.write(person.firstname + " is" + person.age + "yeaars old.");
+    document.write(person.firstname + " is" + person.age + "yeaars old.<br>");
     //创建一个对象为personA并且添加属性
-    personA = {firstname: "Meatball", lastname: "uncle", age: "20", eyecolor: "blue"};
-    document.write(personA.lastname + " is" + person.age + "years old.");
+    personA = {
+      firstname: "Meatball",
+      lastname: "uncle",
+      age: "20",
+      eyecolor: "blue"
+    };
+    document.write(personA.lastname + " is" + person.age + "years old.<br>");
     //    使用函数来构造对象
     //    创建函数personB
     function personB(firstname, lastname, age, eyecolor) {
@@ -34,7 +39,7 @@
         this.eyecolor = eyecolor;
     }
     myBoyFriends = new personB("wang", "hao", 25, "blue");
-    document.write(myBoyFriends.firstname + myBoyFriends.lastname + " is" + myBoyFriends.age + "years old.");
+    document.write(myBoyFriends.firstname + myBoyFriends.lastname + " is" + myBoyFriends.age + "years old.<br>");
 
     function personC(firstname, lastname, age, eyecolor) {
         this.firstname = firstname;
@@ -52,7 +57,7 @@
 
     function myFunction() {
         var x;
-        var txt="";
+        var txt="11";
         var personE={fname:"name",lname:"Gates",age:"56"};
         for( x in personE){
             txt=txt+personE[x];

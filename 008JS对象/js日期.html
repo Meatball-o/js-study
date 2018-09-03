@@ -8,13 +8,13 @@
 <body  onload="time()">
 <script>
     //    获得当日的日期
-    document.write(Date() + "<br>");
+    document.write("当日的日期:"+Date() + "<br>");
     //getTime()返回毫秒数
     var d = new Date();
     document.write("从1997/01/01至今已过去" + d.getTime() + "毫秒" + '<br>');
     //    setFullYear() 设置具体的日期
     var e = new Date();
-    e.setFullYear(1997, 05, 25);
+    e.setFullYear(1997, 5, 25);
     document.write(e + '<br>');
     //    toUTCString() 将当日的日期（根据 UTC）转换为字符串。
     var f = new Date();
