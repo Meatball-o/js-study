@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p>单击开始计数按钮，按下时开始计数，输入框将从0开始一直计数。单击停止计数按钮，按下时停止计数，再次点击开始计数按钮，又再次开始计数。</p>
+<button onclick="time()">开始计数</button>
+<span id="txt"></span>
+<button onclick="stopTime()">停止计数</button>
+<script>
+  var c = 0;
+  var t;
+  var stop = 0;
+
+  function timedCount() {
+    document.getElementById("txt").innerHTML = c;
+    c +=1
+    t = setTimeout(function () {
+      timedCount()
+    }, 1000)
+  }
+
+  function time() {
+    if (!stop) {
+      stop = 1;
+      timedCount();
+    }
+  }
+
+  function stopTime() {
+    clearTimeout(t);
+    stop = 0;
+  }
+</script>
+</body>
+</html>

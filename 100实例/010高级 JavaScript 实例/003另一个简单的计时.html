@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button onclick="my()">显示文本时间</button>
+<span id="txt"></span>
+<script>
+  function my() {
+    var a = document.getElementById("txt")
+    setTimeout(function () {
+      a.innerHTML = "2秒"
+    }, 2000)
+    setTimeout(function () {
+      a.innerHTML = "4秒"
+    }, 4000)
+    setTimeout(function () {
+      a.innerHTML = "6秒"
+    }, 6000)
+  }
+</script>
+</body>
+</html>
