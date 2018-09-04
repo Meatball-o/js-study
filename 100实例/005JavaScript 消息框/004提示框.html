@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p>点击按钮查看输入的对话框。</p>
+<button onclick="myFunction()">点我</button>
+<p id="demo"></p>
+<script>
+  function myFunction() {
+    var x
+    var p = prompt("请输入你的名字", "meatball")
+    if (p != null && p != "") {
+        x="你好"+p+"!"
+      document.getElementById("demo").innerHTML=x;
+    }
+  }
+</script>
+</body>
+</html>

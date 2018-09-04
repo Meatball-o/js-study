@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p>点击按钮，显示确认框。</p>
+<button onclick="myFunction()">点我</button>
+<p id="demo"></p>
+<script>
+  function myFunction() {
+    var x;
+    var r = confirm("按下按钮！")
+    if (r==true) {
+      x="确认"
+    }else{
+      x="取消"
+    }
+    document.getElementById("demo").innerHTML=x;
+  }
+</script>
+</body>
+</html>
