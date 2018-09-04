@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h4>当有多个类似的元素需要绑定事件时，一个一个去绑定即浪费时间，又不利于性能，这时候就可以用到事件委托，给他们的一个共同父级元素添加一个事件函数去处理他们所有的事件情况，</h4>
+<ul id="1ist">
+  <li>111</li>
+  <li>222</li>
+  <li>333</li>
+  <li>444</li>
+</ul>
+
+<script type="text/javascript">
+  document.getElementById('1ist').addEventListener('click',function(e){
+  // e.currentTarget指的是注册了事件监听器的对象，
+  // 而e.target指的是该对象里的子对象，也是触发这个事件的对象
+    e.target.innerHTML = "被点击";
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h5>concat() 连接两个或更多的数组，并返回结果。</h5>
+<script>
+  var a = ["a", "aa", "aaa"];
+  var b = ["b", "bb", "bbb"];
+  var c = ["c", "cc", "ccc"];
+  var abc = a.concat(b, c)
+  document.write(abc)
+</script>
+<h5>copyWithin(bi复制到指定目标索引位置, ke元素复制的起始位置,ke停止复制的索引位置 (默认为 array.length)。如果为负值，表示倒数。) 从数组的指定位置拷贝元素到数组的另一个指定位置中。</h5>
+<script>
+  var a = ["a", "aa", "aaa"];
+  var b = a.copyWithin(1)
+  document.write(b)
+</script>
+<h5>every(bi当前元素的值,ke当前元素的索引值,ke当前元素属于的数组对象) 检测数值元素的每个元素是否都符合条件。</h5>
+<button onclick="myFunction()">点我</button>
+<p id="demo"></p>
+<script>
+  var ages = [32, 33, 16, 40];
+
+  function myAge(age) {
+    return age >= 18
+  }
+
+  function myFunction() {
+    document.getElementById("demo").innerHTML = ages.every(myAge);
+  }
+</script>
+<h5>fill(bi填充的值,ke开始填充位置,ke停止填充位置 (默认为 array.length)) 使用一个固定值来填充数组。</h5>
+<p>点击按钮使用 “Runoob” 填充所有数组元素。</p>
+<button onclick="myFunctionA()">点我</button>
+<p id="demoA"></p>
+<script>
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  document.getElementById("demoA").innerHTML = fruits;
+
+  function myFunctionA() {
+    document.getElementById("demoA").innerHTML = fruits.fill("Runoob", 0, 2);
+  }
+</script>
+<h5>filter(bi当前元素的值,ke当前元素的索引值,ke当前元素属于的数组对象) 检测数值元素，并返回符合条件所有元素的数组。</h5>
+<p>点击按钮获取数组中大于 18 的所有元素。</p>
+<button onclick="myFunctionB()">点我</button>
+<p id="demoB"></p>
+<script>
+  var ages = [32, 33, 16, 40];
+  function myAge(age) {
+    return age >= 18
+  }
+  function myFunctionB() {
+    document.getElementById("demoB").innerHTML = ages.filter(myAge);
+  }
+</script>
+<h5>forEach(bi当前元素,ke当前元素的索引值,ke当前元素所属的数组对象)	数组每个元素都执行一次回调函数。</h5>
+<p>点击按钮列出数组的每个元素。</p>
+<button onclick="numbers.forEach(myFunctionC)">点我</button>
+<p id="demoC"></p>
+<script>
+  demoP = document.getElementById("demoC");
+  var numbers = [4, 9, 16, 25];
+  function myFunctionC(item, index) {
+    demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>";
+  }
+</script>
+</body>
+</html>

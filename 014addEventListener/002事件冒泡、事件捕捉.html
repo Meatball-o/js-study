@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #parent{
+      width: 200px;
+      height: 200px;
+      background-color: #000;
+    }
+    #child{
+      width: 100px;
+      height: 100px;
+      background-color: #ff0005;
+    }
+  </style>
+</head>
+<body>
+<h1>事件冒泡和时间捕捉：</h1>
+<div id="parent">
+  <div id="child" class="child"></div>
+</div>
+<!--1.当点击child元素时，先触发child的点击事件，再触发parent的点击事件，打印相应的内容；-->
+<!--2.当点击parent元素时，只触发parent的点击事件，因为parent元素冒泡上去没有dom元素设置了click事件的函数；-->
+<!--<script type="text/javascript">-->
+  <!--document.getElementById("parent").addEventListener("click", function (e) {-->
+    <!--console.log("parent事件被触发，" + this.id);-->
+  <!--}, false);-->
+  <!--document.getElementById("child").addEventListener("click", function (e) {-->
+    <!--console.log("child事件被触发，" + this.id);-->
+  <!--}, false);-->
+<!--</script>-->
+<h5>1.当点击child元素时，先触发parent的点击事件，再触发child的点击事件，打印相应的内容；</h5>
+<h5>2.当点击parent元素时，只触发parent的点击事件，因为parent元素从上面捕捉下来一直到parent元素没有dom元素设置了click事件的函数；
+</h5>
+<h4>当点击child元素时，不论是设置的事件捕捉还是事件冒泡，都会触发parent的点击事件，除非不给parent元素设置点击事件；</h4>
+<script type="text/javascript">
+  document.getElementById("parent").addEventListener("click",function(e){
+    console.log("parent事件被触发，"+this.id);
+  },true);
+  document.getElementById("child").addEventListener("click",function(e){
+    console.log("child事件被触发，"+this.id);
+  },true);
+</script>
+</body>
+</html>
