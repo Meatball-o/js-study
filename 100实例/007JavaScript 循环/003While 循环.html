@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p></p>
+<button onclick="my()">点我</button>
+<p id="demo"></p>
+<script>
+  function my() {
+    var x = "", i = 0
+    while (i < 10) {
+      x = x + "该数字为" + i + "<br>";
+      i++;
+    }
+    document.getElementById("demo").innerHTML = x
+  }
+</script>
+</body>
+</html>

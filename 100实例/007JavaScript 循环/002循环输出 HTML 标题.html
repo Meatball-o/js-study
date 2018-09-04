@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p>单击按钮将HTML标题设置从1到6的样式显示</p>
+<button onclick="my()">点我</button>
+<p id="demo"></p>
+<script>
+  function my() {
+      var x="",i
+      for(i=1;i<=6;i++){
+        x=x + "<h" + i + ">Heading " + i + "</h" + i + ">";
+      }
+    document.getElementById("demo").innerHTML = x
+  }
+</script>
+</body>
+</html>

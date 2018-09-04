@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p>点击这个按钮，来调用带参数的函数。</p>
+<button onclick="my('meatball','WEB')">点击这里</button>
+<p>
+  当你点击其中任意一个按钮，一个函数将被执行，函数结果弹出一个警告显示传递的参数。
+</p>
+<input type="button" onclick="my1('Good Morning!')" value="早上">
+<input type="button" onclick="my1('Good Evening!')" value="晚上">
+<script>
+  function my(name,job) {
+    alert("Welcome "+name+" the "+job)
+  }
+  function my1(txt) {
+    alert(txt)
+  }
+</script>
+</body>
+</html>

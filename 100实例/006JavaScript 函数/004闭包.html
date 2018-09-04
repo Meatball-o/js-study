@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p>局部变量计数。</p>
+<button type="button" onclick="myFunction()">计数!</button>
+<p id="demo">0</p>
+<script>
+  var add = (function () {
+    var c = 0
+    return function () {
+      return c += 1
+    }
+  })()
+  function myFunction() {
+    document.getElementById("demo").innerHTML=add()
+  }
+</script>
+</body>
+</html>
