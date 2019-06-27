@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1
+    function sayHi() {
+        console.log(name);  //undefined
+        //console.log(age);  //ReferenceError
+        // var 声明提前
+        var name="meatball";
+        let age=21;
+    }
+    sayHi()
+    // 2
+    // var声明 是全局
+    for(var i=0;i<3;i++){
+        // setTimeout函数真正被执行时，循环已经走完  当调用setTimeout函数时，i已经被赋值为3
+        setTimeout(()=>console.log(i),1) //333
+    }
+    // let声明 具有块作用域  在每次迭代期间，i将被创建为一个新值，并且每个值都会存在于循环内的块级作用域
+    for(let i=0;i<3;i++){
+        setTimeout(()=>console.log(i),1)//012
+    }
+    // 3
+    const shape={
+        radius: 10,
+        // diameter是普通函数
+        diameter(){
+            console.log(this.radius*2);  //20
+        },
+        // perimeter是箭头函数 this关键字指向是它所在上下文（定义时的位置）的环境 调用perimeter时，它不是指向shape对象，而是指其定义时的环境（window） 没有值radius属性，返回undefined
+        perimeter:()=> console.log(2*Math.Pi*this.radius) //NaN
+    };
+    shape.diameter();
+    shape.perimeter();
+    //4
+    // 一元加号会尝试将boolean类型转换为数字类型。 true被转换为1，false被转换为0。
+    console.log(+true);  //1
+    // 字符串'Lydia'是一个真值。 我们实际上要问的是“这个真值是假的吗？”。 这会返回false
+    console.log(!"Lydia");  // false
+    // 4
+    // 5
+    const bird = {
+        size: "small"
+    };
+    const mouse = {
+        name: "Mickey",
+        small: true
+    };
+    // console.log(mouse.bird.size); 报错
+    // mouse [bird.size]：首先它会对bird.size求值，得到small。 mouse [“small”]返回true
+    console.log(mouse[bird.size]);  //true
+    console.log(mouse[bird["size"]]);  //true
+    // 6
+    let c = { greeting: "Hey!" };
+    let d;
+    // 在JavaScript中，当设置它们彼此相等时，所有对象都通过引用进行交互。
+    d = c;
+    c.greeting = "Hello";
+    console.log(d.greeting);  //Hello
+    // 7
+    let a = 3;
+    let b = new Number(3);
+    let cc = 3;
+
+    console.log(a); //3
+    console.log(b);  //new Number（）是一个内置的函数构造函数
+    console.log(cc); //3
+
+
+    function Foo() {
+        getName=function () {console.log(1);}
+        return this;
+    }
+    Foo.getName=function () {console.log(2);};
+    Foo.prototype.getName=function () {console.log(3);};
+    var getName=function () {console.log(4);};
+    function getName() {console.log(5);};
+
+    Foo.getName();//2
+    getName();//4
+    Foo().getName();//1
+    getName();//1
+    new Foo.getName();//2
+    new Foo().getName();//3
+    new new Foo().getName();//3
+
+
+    var a=25;
+    var b=a;
+    b=18
+    console.log(a,b); // 25  18
+
+
+    for(var i=0;i<5;i++){
+        setTimeout(function () {
+            console.log(i);
+        },i*1000)
+    }
+    var str = "abacdeesa";
+    txt(str);
+
+
+    for(var i=0;i<3;i++){
+        (function (a) {
+            setTimeout(function () {
+                console.log(a);  //3 3 3 3 3
+            },100)
+        }(i))
+    }
+    function getChar(str) {
+        if (typeof str !== 'string') return // 判断参数是否为字符串
+        const obj = new Object() // 键为字母，值为次数
+        const arr = str.split('')
+        for (let i = 0; i < arr.length; i++) { // 遍历字符串每一个字母
+            let char = arr[i] // 当前字母
+            obj[char] = obj[char] || 0 // 保证初始值为0
+            obj[char]++ // 次数加1
+        }
+        let maxChar // 存储字母
+        let maxNum = 0 // maxChar字母对应的次数
+        for (let key in obj) { // 遍历obj
+            if (obj[key] > maxNum) {
+                maxChar = key // 比较后存储次数多的字母
+                maxNum = obj[key] // 以及它对应的次数
+            }
+        }
+        return maxChar // 返回结果
+    }
+    let str = 'aabbbccddeeeeeee'
+    console.log(getChar(str))  //e
+</script>
+</body>
+</html>
