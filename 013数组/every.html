@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>every</title>
+</head>
+<body>
+<script>
+  const array1 = [1, 30, 39, 29, 10, 13];
+  const isBelowThreshold = (currentValue) => currentValue < 40
+  console.log(array1.every(isBelowThreshold))
+
+  var ages = [32, 33, 16, 40];
+
+  function checkAdult(age) {
+    return age >= 18;
+  }
+
+  console.log(ages.every(checkAdult))
+
+  function estAssezGrand(element, index, array) {
+    return element >= 10;
+  }
+
+  console.log([12, 5, 8, 130, 44].every(estAssezGrand));
+  console.log([12, 54, 18, 130, 44].every(estAssezGrand))
+
+
+  console.log([12, 5, 8, 130, 44].every(elem => elem >= 10)); // false
+  console.log([12, 54, 18, 130, 44].every(elem => elem >= 10)); // true
+  console.log([{a: 1, b: 2}, {a: 1, b: 3}].every(elem => elem.a === 1)); // true
+  console.log([{a: 2, b: 2}, {a: 1, b: 3}].every(elem => elem.a === 1)); // false
+</script>
+</body>
+</html>

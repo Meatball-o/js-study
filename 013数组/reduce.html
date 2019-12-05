@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>reduce</title>
+</head>
+<body>
+<script>
+  // reduce参数：
+  // function(total,currentValue, index,arr)	必需。用于执行每个数组元素的函数。
+  // 函数参数:
+  //   total	必需。初始值, 或者计算结束后的返回值。
+  //   currentValue	必需。当前元素
+  //   currentIndex	可选。当前元素的索引
+  //   arr	可选。当前元素所属的数组对象。
+  // initialValue	可选。传递给函数的初始值
+  // one
+  var numbers = [65, 44, 12, 4];
+  function myFunction() {
+    console.log(numbers.reduce(function geuSum(total, num) {
+      return total + num
+    }))//125
+  }
+  myFunction()
+  // two
+  const array1 = [1, 2, 3, 4];
+  const reducer=(accumulator, currentValue)=>{
+   return accumulator + currentValue
+  }
+  console.log(array1.reduce(reducer))//10
+  console.log(array1.reduce(reducer,10))//20
+  // three
+  console.log([0, 1, 2, 3, 4].reduce((accumulateur, valeurCourante)=>accumulateur + valeurCourante))//10
+  // four
+  console.log([0, 1, 2, 3, 4].reduce((accumulateur, valeurCourante)=>accumulateur + valeurCourante), 10)//10 10
+  // five
+  console.log(
+    [0, 1, 2, 3, 4].reduce(function(accumulateur, valeurCourante, index, array){
+      return accumulateur + valeurCourante;
+    }, 10)//20
+  )
+  // six
+  var valeurInitiale = 0;
+  var somme = [{y: 1}, {y:2}, {y:3}].reduce((accumulateur, valeurCourante)=>{
+    return accumulateur + valeurCourante.y;
+  }, valeurInitiale);
+
+  console.log(somme);//6
+  // seven
+  var applati=[[0,1],[2,3],[3,4],[5,6],[7,8]].reduce((a,b)=>{
+    return a.concat(b)
+  })
+  console.log(applati)//[0, 1, 2, 3, 3, 4, 5, 6, 7, 8]
+  // eight
+  var amis = [
+    { "nom": "Quentin", "livres": ["City Hall", "Harry Potter"]},
+    { "nom": "Alice", "livres": ["L'Avare", "Les Fleurs du Mal"]}
+  ]
+  var tousLivres=amis.reduce((a,b)=>{
+    debugger
+    return [...a,...b.livres]
+  },["Perceval"])
+  console.log(tousLivres)// ["Perceval", "City Hall", "Harry Potter", "L'Avare", "Les Fleurs du Mal"]
+</script>
+</body>
+</html>
