@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。
+  // 1.使用数组的indexOf()方法
+  let arr1 = [1, '1', 2, '2', 1, 2, 'x', 'y', 'f', 'x', 'y', 'f', '2', 'f']
+
+  function unique1(arr) {
+    let result = []
+    for (let i = 0;i<arr.length;i++) {
+      let item = arr[i]
+      console.log(item)
+      if(result.indexOf(item)== -1){
+        result.push(item)
+      }
+    }
+    return result
+  }
+  console.log(unique1(arr1))
+  // 2.利用Set类型
+  let arr2 = [1, '1', 2, '2', 1, 2, 'x', 'y', 'f', 'x', 'y', 'f', '2', 'f']
+  function unique2(arr){
+    return Array.from(new Set(arr))
+  }
+
+  console.log(unique2(arr2))
+</script>
+</body>
+</html>

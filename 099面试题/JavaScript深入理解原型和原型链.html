@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // http://xieyufei.com/2017/04/16/FrontEnd-JS-Prototype.html
+  // 使用构造函数创建一个对象：
+  function Person() {}
+  var person = new Person();
+  person.name = 'name'
+  console.log(person.name)  //name
+
+  // prototype
+  // 每个函数都有一个prototype属性   prototype是函数才会有的属性
+  // 函数的prototype属性指向了  正是调用该构造函数而创建的实例的原型,也就是这个例子中的person1和person2的原型。
+  function Person1() {}
+  Person1.prototype.name='name'
+  var person1=new Person1()
+  var person2=new Person1()
+  console.log(Object.prototype.toString.call(person1))
+  console.log(person1.name)//name
+  console.log(person2.name)//name
+
+  // __proto__
+  // 每一个JavaScript对象(除了null)都具有的一个属性，叫__proto__，这个属性会指向该对象的原型。
+  function Person2() {}
+  var person = new Person2()
+  console.log(person.__proto__===Person2.prototype)  //true
+</script>
+</body>
+</html>

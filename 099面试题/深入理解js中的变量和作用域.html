@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // http://xieyufei.com/2016/09/21/JS-Variate-Scope.html
+  var a = 10  //全局变量
+  function show() {
+    console.log('a:' + a)  //a:10
+    var b = 2  //局部变量
+    console.log('b:'+b)  //b:2
+  }
+  show()
+  console.log('outside a:'+a);  //outside a:10
+  console.log('outside b:'+b);  //b is not defined
+
+  // 作用域
+  // js中作用域只有一个函数作用域和全局作用域
+  // js中没有块级作用域
+</script>
+</body>
+</html>

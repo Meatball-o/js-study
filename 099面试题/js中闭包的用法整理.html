@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // http://xieyufei.com/2016/09/20/Js-Closure.html
+  function func() {
+    var n = 999
+    add = function () {
+      n++
+    }
+    function show() {
+      return n
+    }
+    return show
+  }
+  var tempShow = func()
+  console.log(tempShow())
+  add();
+  console.log(tempShow())
+
+</script>
+</body>
+</html>
