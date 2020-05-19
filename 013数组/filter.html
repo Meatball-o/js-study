@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>concat</title>
+</head>
+<body>
+<!--arr.filter(callback(element[, index[, array]])[, thisArg])-->
+<script>
+  // 过滤掉小于10的值
+  var a=[0,1,10,52,100,1000]
+  var b=a.filter(function (element) {
+    return element<10
+  })
+  console.log('小于10的值',b)
+
+  var fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+  function fFruits(query) {
+    return fruits.filter(function(element){
+      return element.toLowerCase().indexOf(query.toLowerCase())>-1
+    })
+  }
+
+  console.log(fFruits('an'))
+</script>
+</body>
+</html>
