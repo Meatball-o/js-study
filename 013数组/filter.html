@@ -20,8 +20,20 @@
       return element.toLowerCase().indexOf(query.toLowerCase())>-1
     })
   }
-
   console.log(fFruits('an'))
+  // 删掉偶数，保留奇数
+  var arr = [1, 2, 4, 5, 6, 9, 10, 15];
+  var arr1=arr.filter(function (element) {
+    return element %2 !=0
+  })
+  console.log(arr1)
+
+  var arr = ['A', '', 'B', null, undefined, 'C', ' '];
+  var arr10 = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+  var arr11= arr10.filter(function (element, index, self) {
+    return self.indexOf(element) === index;
+  });
+  console.log(arr11)
 </script>
 </body>
 </html>
